@@ -12,7 +12,7 @@ Bu proje, gömülü sistem mühendisliği öğrenmek isteyenler için seviyelere
 
 ## 📊 Seviyeler
 
-- 🟢 Beginner  
+- 🟢 [Beginner](roadmap/beginner.md) 
 - 🟡 Intermediate  
 - 🔴 Advanced  
 - ⚫ Expert  
