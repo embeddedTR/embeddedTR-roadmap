@@ -1,147 +1,86 @@
-# 🟢 Beginner Level
+# 🟢 Başlangıç Seviyesi
 
-Gömülü sistemlere giriş yapanlar için temel konular.
-
----
-
-## 🧠 1. C Programlama Temelleri
-
-❗ Neden önemli:  
-Gömülü sistemlerin %90’ı C ile geliştirilir.
-
-📌 Öğrenmen gerekenler:
-- Variables, data types
-- Pointers ⭐ (çok önemli)
-- Struct / Union
-- Bitwise operations
-
-🧠 Gerçek kullanım:
-- Register manipulation
-- Peripheral control
-
-⚠️ Yaygın hata:
-- Pointer mantığını anlamadan ilerlemek
+> Tahmini süre: **2–4 ay** (haftada 8–10 saat)
 
 ---
 
-## ⚡ 2. Temel Elektronik
+## Konular
 
-❗ Neden önemli:  
-Donanımı anlamadan embedded olmaz.
+### 1. C Programlama Temelleri
+Gömülü sistemlerin ~%90'ı C ile yazılır.
+- Değişkenler, veri tipleri, döngüler, koşullar
+- Fonksiyonlar ve kapsam (scope)
+- Pointer ve adres kavramı
+- Struct ve union
+- Bitwise operatörler
 
-📌 Öğrenmen gerekenler:
-- Ohm Kanunu
-- Direnç, kondansatör, diyot
-- Pull-up / Pull-down
+### 2. Temel Elektronik
+- Ohm yasası, direnç, kondansatör, LED
+- Pull-up / pull-down dirençleri
+- Breadboard ve basit devre okuma
+- Multimetre kullanımı
 
-🧠 Gerçek kullanım:
-- GPIO input stabilizasyonu
-- Sensör bağlantıları
+### 3. Geliştirme Ortamı
+- STM32CubeIDE veya Keil MDK kurulumu
+- GPIO yapılandırması (input / output)
+- LED yakma, buton okuma
+- SWD ile debug ve breakpoint kullanımı
 
-⚠️ Yaygın hata:
-- Floating pin bırakmak
+### 4. Timer ve Zamanlama
+- `HAL_Delay()` neden kötü bir alışkanlıktır?
+- Timer ile gecikme farkı
+- Temel timer konfigürasyonu
 
----
-
-## 🔌 3. GPIO (Input / Output)
-
-❗ Neden önemli:  
-MCU ile dış dünya arasındaki ilk bağlantı.
-
-📌 Öğrenmen gerekenler:
-- Input / Output modları
-- Push-pull vs open-drain
-- Pull-up / pull-down
-
-🧠 Gerçek kullanım:
-- LED yakmak
-- Buton okumak
-
-⚠️ Yaygın hata:
-- Debounce yapmamak
+### 5. State Machine Temeli
+- Neden global değişken yerine state machine?
+- Basit switch-case state machine
 
 ---
 
-## ⏱️ 4. Delay vs Timer Mantığı
+## Kaynaklar
 
-❗ Neden önemli:  
-Blocking vs non-blocking farkı kritik.
+### Kitaplar
+- **"C Programming: A Modern Approach"** — K.N. King *(C öğrenmek için en iyi kaynaklardan biri)*
+- **"Make: Electronics"** — Charles Platt *(temel elektronik için, Türkçe'ye de çevrildi)*
 
-📌 Öğrenmen gerekenler:
-- delay() mantığı
-- timer interrupt
+### Videolar / Kurslar
+- [Mitch Davis — Bare Metal Embedded](https://www.youtube.com/@MitchDavis2) — STM32 ile bare-metal başlangıç, ücretsiz
+- [Udemy — Mastering Microcontroller with Embedded C Programming](https://www.udemy.com) — FastBit Academia, ücretli ama kapsamlı
+- [ST Microelectronics YouTube Kanalı](https://www.youtube.com/@STMicroelectronics) — resmi STM32 eğitimleri
 
-🧠 Gerçek kullanım:
-- Low power sistemler
-- Event-driven yapı
-
-⚠️ Yaygın hata:
-- Her şeyi delay ile yapmak
-
----
-
-## 🔁 5. Basit State Machine
-
-❗ Neden önemli:  
-Gerçek sistemler state-based çalışır.
-
-📌 Öğrenmen gerekenler:
-- State
-- Transition
-- Event
-
-🧠 Gerçek kullanım:
-- Sensör sistemleri
-- UI logic
-
-⚠️ Yaygın hata:
-- Spaghetti code yazmak
+### Araçlar
+- STM32CubeIDE (ücretsiz)
+- STM32CubeMX (ücretsiz, kod üretici)
+- Proteus veya Wokwi (simülasyon)
 
 ---
 
-## 🧰 6. Geliştirme Ortamı
+## Proje Ödevleri
 
-📌 Öğrenmen gerekenler:
-- STM32CubeIDE (veya alternatif)
-- Compiler (GCC)
-- Basic debugging
+Aşağıdaki projeleri sırayla tamamla:
 
-🧠 Gerçek kullanım:
-- Breakpoint
-- Variable watch
-
-⚠️ Yaygın hata:
-- Debug kullanmadan kod yazmak
+| # | Proje | Hedef |
+|---|---|---|
+| 1 | LED Blink | GPIO output, temel proje yapısı |
+| 2 | Buton ile LED kontrolü | GPIO input, debounce |
+| 3 | 7 Segment Sayaç | Çoklu GPIO, zamanlama |
+| 4 | Trafik Işığı Simülasyonu | State machine, timer |
+| 5 | Basit Hesap Makinesi (UART) | İlk iletişim deneyimi |
 
 ---
 
-## 🔍 7. Debugging Temelleri
+## Seviye Kontrol Listesi
 
-📌 Öğrenmen gerekenler:
-- Breakpoint
-- Step over / into
-- Register izleme
+Bu seviyeyi tamamladığını düşünüyorsan aşağıdaki soruları cevaplayabilmelisin:
 
-🧠 Gerçek kullanım:
-- Hata tespiti
-- Sistem analizi
-
-⚠️ Yaygın hata:
-- Sadece printf ile debug yapmak
+- [ ] Pointer ile değişken adresi arasındaki fark nedir?
+- [ ] Pull-up direnci neden gereklidir?
+- [ ] `HAL_Delay()` neden interrupt tabanlı sistemlerde sorun çıkarır?
+- [ ] State machine neden sonsuz döngü + bayrak'tan daha iyidir?
+- [ ] Bir GPIO pinini input olarak nasıl yapılandırırsın?
 
 ---
 
-## 🎯 Bu seviyenin hedefi
+## Sonraki Adım
 
-Bu seviyeyi bitiren biri:
-
-- LED yakabilir  
-- Buton okuyabilir  
-- Basit sistem kurabilir  
-- C diline hakim olur  
-
----
-
-## 🚀 Sonraki adım
-
-➡️ Intermediate level
+➡️ [Orta Seviye](./intermediate.md)
