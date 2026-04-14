@@ -1,205 +1,108 @@
-# 🟡 Intermediate Level
+# 🟡 Orta Seviye
 
-Temel bilgileri öğrenmiş ve artık gerçek gömülü sistem geliştirmeye başlayanlar için.
-
----
-
-## ⚡ 1. Interrupt (Kesme Mekanizması)
-
-❗ Neden önemli:  
-Event-driven sistemlerin temelidir. CPU sürekli polling yapmak zorunda kalmaz.
-
-📌 Öğrenmen gerekenler:
-- External interrupt (EXTI)
-- NVIC mantığı
-- Interrupt priority
-
-🧠 Gerçek kullanım:
-- Buton tetikleme
-- UART veri alımı
-- Sensör tetikleme (PIR vs.)
-
-⚠️ Yaygın hata:
-- Interrupt içinde uzun işlem yapmak
+> Tahmini süre: **3–5 ay** (haftada 8–10 saat)
+> Ön koşul: [Başlangıç Seviyesi](./beginner.md)
 
 ---
 
-## ⏱️ 2. Timer / Counter
+## Konular
 
-❗ Neden önemli:  
-Zaman tabanlı tüm sistemlerin kalbidir.
+### 1. Interrupt (EXTI / NVIC)
+- Interrupt nedir, neden kullanılır?
+- EXTI ile GPIO interrupt
+- NVIC öncelik yapılandırması
+- ISR içinde yapılmaması gerekenler
 
-📌 Öğrenmen gerekenler:
-- Basic timer
-- PWM üretimi
-- Input capture
+### 2. Timer / PWM
+- Timer modları: Output Compare, Input Capture, PWM
+- Servo motor ve LED dim kontrolü
+- Encoder okuma
 
-🧠 Gerçek kullanım:
-- LED blink (non-blocking)
-- Motor kontrol
-- Zaman ölçümü
+### 3. ADC
+- Analog-digital dönüşüm temeli
+- Tek kanal, çok kanal (scan mode)
+- DMA ile ADC kullanımı
+- Gürültü filtreleme (hareketli ortalama)
 
-⚠️ Yaygın hata:
-- Delay kullanmaya devam etmek
+### 4. UART
+- Polling, interrupt ve DMA tabanlı UART
+- Circular buffer ile RX yönetimi
+- UART üzerinden debug
 
----
+### 5. I2C / SPI
+- Protokol farkları ve ne zaman hangisi?
+- HAL ile sensör okuma (BME280, MPU6050)
+- Logic analyzer ile bus analizi
 
-## 🔊 3. ADC (Analog to Digital Converter)
+### 6. DMA
+- DMA nedir, neden CPU'yu rahatlatır?
+- Memory-to-memory, peripheral-to-memory transfer
+- DMA interrupt ve transfer complete
 
-❗ Neden önemli:  
-Gerçek dünyadan veri almanın yolu.
+### 7. Low Power Modları
+- Sleep, Stop, Standby farkları
+- Uyku modundan çıkış (wakeup)
+- Batarya ömrü hesaplama
 
-📌 Öğrenmen gerekenler:
-- ADC resolution
-- Sampling
-- Continuous vs single mode
-
-🧠 Gerçek kullanım:
-- NTC sıcaklık ölçümü
-- Batarya voltajı ölçümü
-
-⚠️ Yaygın hata:
-- Gürültü ve filtreleme konusunu ihmal etmek
-
----
-
-## 📡 4. UART (Serial Communication)
-
-❗ Neden önemli:  
-Debug ve cihazlar arası iletişimin en temel yolu.
-
-📌 Öğrenmen gerekenler:
-- Baudrate
-- TX / RX mantığı
-- Interrupt / DMA ile kullanım
-
-🧠 Gerçek kullanım:
-- Loglama
-- Modül haberleşmesi
-
-⚠️ Yaygın hata:
-- Blocking UART kullanmak
-
----
-
-## 🔗 5. I2C / SPI Haberleşme
-
-❗ Neden önemli:  
-Sensör ve çevre birimlerle iletişim.
-
-📌 Öğrenmen gerekenler:
-- Master / Slave
-- Clock mantığı
-- Addressing (I2C)
-
-🧠 Gerçek kullanım:
-- Sensör okuma (IMU, EEPROM)
-- Display sürme
-
-⚠️ Yaygın hata:
-- Timing ve pull-up hataları
-
----
-
-## 🕒 6. RTC (Real Time Clock)
-
-❗ Neden önemli:  
-Zaman bazlı sistemler için vazgeçilmez.
-
-📌 Öğrenmen gerekenler:
-- RTC clock source (LSI / LSE)
-- Wakeup timer
-
-🧠 Gerçek kullanım:
-- Low power wakeup
-- Zaman takibi
-
-⚠️ Yaygın hata:
-- RTC kalibrasyonu yapmamak
-
----
-
-## 🔋 7. Power Modes (Low Power)
-
-❗ Neden önemli:  
-Batarya ile çalışan sistemlerin kalbi.
-
-📌 Öğrenmen gerekenler:
-- Sleep / Stop / Standby
-- Wakeup kaynakları
-
-🧠 Gerçek kullanım:
-- PIR sensör sistemleri
-- IoT cihazlar
-
-⚠️ Yaygın hata:
-- Gereksiz güç tüketimi (peripheral açık bırakmak)
-
----
-
-## 🧠 8. DMA (Direct Memory Access)
-
-❗ Neden önemli:  
-CPU’yu yormadan veri transferi sağlar.
-
-📌 Öğrenmen gerekenler:
-- Memory to peripheral
-- Peripheral to memory
-
-🧠 Gerçek kullanım:
-- ADC continuous sampling
-- UART high-speed veri
-
-⚠️ Yaygın hata:
-- DMA callback yönetimini anlamamak
-
----
-
-## 🔁 9. Non-Blocking Yazılım Mantığı
-
-❗ Neden önemli:  
-Gerçek zamanlı sistemlerin temelidir.
-
-📌 Öğrenmen gerekenler:
-- State machine
+### 8. Non-Blocking Mimari
+- `HAL_Delay()` bağımlılığından kurtulmak
+- Tick tabanlı zamanlama
 - Event-driven yapı
 
-🧠 Gerçek kullanım:
-- Çoklu görev yönetimi
-- Low power sistemler
+### 9. RTC
+- Gerçek zamanlı saat yapılandırması
+- Backup register kullanımı
+- Alarm ile periyodik uyandırma
 
-⚠️ Yaygın hata:
-- Delay kullanmaya devam etmek
-
----
-
-## 🛠️ 10. Debugging (Advanced)
-
-📌 Öğrenmen gerekenler:
-- SWD / JTAG
-- Register debug
-- Logic analyzer kullanımı
-
-🧠 Gerçek kullanım:
-- Protokol analizi
-- Timing debug
-
-⚠️ Yaygın hata:
-- Sadece yazılım debug’a güvenmek
+### 10. İleri Debug Teknikleri
+- SWD / JTAG farkı
+- Watch point ve memory view
+- Hard fault analizi
 
 ---
 
-## 🎯 Bu seviyenin hedefi
+## Kaynaklar
 
-Bu seviyeyi bitiren biri:
+### Kitaplar
+- **"Embedded Systems: Introduction to ARM Cortex-M Microcontrollers"** — Jonathan Valvano *(ücretsiz PDF mevcut)*
+- **"The Definitive Guide to ARM Cortex-M3 and Cortex-M4"** — Joseph Yiu
 
-- Sensör okuyabilir  
-- UART/I2C/SPI ile haberleşebilir  
-- Low power sistem kurabilir  
-- Non-blocking kod yazabilir  
+### Videolar / Kurslar
+- [Udemy — Embedded Systems Bare Metal Programming Ground Up (STM32)](https://www.udemy.com) — FastBit Academia
+- [Phil's Lab YouTube](https://www.youtube.com/@PhilsLab) — STM32, PCB, sinyal işleme
+- [DigiKey YouTube — Shawn Hymel Embedded C](https://www.youtube.com/@digikey) — ücretsiz, kapsamlı seri
+
+### Araçlar
+- Logic Analyzer (Saleae veya ucuz klonları) — protokol debug için şart
+- Oscilloscope — timing analizi
+- STM32CubeMX — DMA ve interrupt yapılandırması için kolaylık
 
 ---
 
-## 🚀 Sonraki adım
+## Proje Ödevleri
 
-➡️ Advanced level
+| # | Proje | Hedef |
+|---|---|---|
+| 1 | UART ile komut alma sistemi | Non-blocking UART, circular buffer |
+| 2 | I2C sensör okuma + UART'a yazdırma | I2C, veri formatlama |
+| 3 | PWM ile servo kontrol | Timer, PWM, duty cycle |
+| 4 | ADC + DMA ile sürekli ölçüm | DMA, analog gürültü filtreleme |
+| 5 | Low power buton uyandırma | Stop modu, EXTI wakeup |
+| 6 | Dijital kronometre | RTC, UART çıktısı, state machine |
+
+---
+
+## Seviye Kontrol Listesi
+
+- [ ] ISR içinde `HAL_Delay()` neden kullanılmamalıdır?
+- [ ] DMA ile UART alımında circular buffer nasıl yönetilir?
+- [ ] I2C'de ACK/NACK farkı nedir?
+- [ ] PWM frekansı ve duty cycle nasıl hesaplanır?
+- [ ] Stop modundan çıkmak için ne yapılır?
+- [ ] ADC'de oversampling nedir, neden kullanılır?
+
+---
+
+## Sonraki Adım
+
+➡️ [İleri Seviye](./advanced.md)
