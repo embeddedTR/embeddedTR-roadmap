@@ -1,214 +1,122 @@
-# ⚫ Expert Level
+# ⚫ Uzman Seviye
 
-Bu seviye, gömülü sistem mühendisliğinde ileri düzey uzmanlık ve gerçek ürün geliştirme deneyimini temsil eder.
+> Tahmini süre: **6–12 ay** (haftada 10–15 saat)
+> Ön koşul: [İleri Seviye](./advanced.md)
 
----
-
-## 🧠 1. System Architecture Design
-
-❗ Neden önemli:  
-Tüm sistemin nasıl çalışacağını belirleyen en kritik aşama.
-
-📌 Öğrenmen gerekenler:
-- Modüler sistem tasarımı
-- Donanım-yazılım ayrımı
-- Katmanlı mimari (Layered architecture)
-
-🧠 Gerçek kullanım:
-- Wireless sensor sistemleri
-- IoT platformları
-
-⚠️ Yaygın hata:
-- Baştan mimari kurmamak (spaghetti sistem)
+Bu seviyede artık tek bir "öğren ve uygula" döngüsü yoktur. Her konu kendi başına derin bir uzmanlık alanıdır. Hepsine hakim olmak beklenmez — odak noktanı seç, derinleş.
 
 ---
 
-## 🧩 2. Hardware-Software Co-Design
+## Konular
 
-❗ Neden önemli:  
-Donanım ve yazılım birlikte optimize edilmelidir.
+### 1. Sistem Mimarisi
+- Çok katmanlı yazılım mimarisi tasarımı
+- Hardware abstraction layer (HAL) standartları
+- AUTOSAR, MISRA-C gibi endüstri standartları
+- Büyük kod tabanı yönetimi (modülerlik, bağımlılık yönetimi)
 
-📌 Öğrenmen gerekenler:
-- GPIO timing
-- Signal integrity
-- Power path design
+### 2. Donanım-Yazılım Co-Design
+- Peripheral seçimi ve trade-off analizi
+- PCB tasarım kısıtlarının yazılıma etkisi
+- Signal integrity ve EMC temelleri
+- Üretim için tasarım (DFM)
 
-🧠 Gerçek kullanım:
-- Low power cihazlar
-- RF sistemler
+### 3. Özel Protokol Geliştirme
+- CAN, LIN, Modbus, EtherCAT temelleri
+- Özel ikili protokol tasarımı
+- Framing, checksum, retry mekanizmaları
+- Protocol state machine
 
-⚠️ Yaygın hata:
-- Donanımı “sabit” kabul etmek
+### 4. Ultra Düşük Güç Tasarımı
+- nA seviyesinde güç bütçesi
+- Enerji toplama (energy harvesting)
+- Supercapacitor ve batarya yönetimi
+- Ölçüm ve doğrulama metodolojisi
 
----
+### 5. Gerçek Zamanlı Analiz
+- Worst-case execution time (WCET) analizi
+- Schedulability analizi (Rate Monotonic, EDF)
+- Jitter ölçümü ve azaltma
+- Hard real-time garanti verme
 
-## 📡 3. Protocol Design
+### 6. Güvenlik Mühendisliği
+- Threat modeling (STRIDE)
+- Kriptografi temelleri (AES, RSA, ECDSA)
+- Secure element ve TrustZone
+- Güvenlik açığı analizi
 
-❗ Neden önemli:  
-Kendi haberleşme protokolünü tasarlayabilmek ileri seviye mühendisliktir.
+### 7. Kalite ve Test
+- Unit test (Unity, CMock)
+- Hardware-in-the-loop (HIL) test
+- Static analiz (PC-lint, Cppcheck, Coverity)
+- Code coverage
 
-📌 Öğrenmen gerekenler:
-- Packet structure
-- Error detection (CRC)
-- Retry / timeout mekanizmaları
+### 8. Fonksiyonel Güvenlik
+- IEC 61508 / ISO 26262 temelleri
+- Safety integrity level (SIL/ASIL) kavramı
+- Redundancy ve fault detection mekanizmaları
+- Watchdog stratejileri
 
-🧠 Gerçek kullanım:
-- RF haberleşme
-- Custom IoT protokolleri
+### 9. Linux Tabanlı Embedded
+- Yocto / Buildroot ile minimal Linux
+- Device tree
+- Kernel driver yazımı temeli
+- User-space vs kernel-space trade-off
 
-⚠️ Yaygın hata:
-- Edge-case’leri düşünmemek
-
----
-
-## 🔋 4. Ultra Low Power System Design
-
-❗ Neden önemli:  
-Yıllarca pil ile çalışan sistemler tasarlamak için gereklidir.
-
-📌 Öğrenmen gerekenler:
-- Power gating (PMOS/NMOS)
-- Sleep/Stop/Standby optimizasyonu
-- Duty cycle hesaplama
-
-🧠 Gerçek kullanım:
-- PIR sensörler
-- Su baskını sensörleri
-- IoT node’lar
-
-⚠️ Yaygın hata:
-- Mikro seviyede tüketimi göz ardı etmek
-
----
-
-## 🧠 5. Advanced Debugging & Root Cause Analysis
-
-❗ Neden önemli:  
-Gerçek mühendislik = problemi bulabilmek.
-
-📌 Öğrenmen gerekenler:
-- Sistematik debugging yaklaşımı
-- Timing analizi
-- EMI kaynaklı hatalar
-
-🧠 Gerçek kullanım:
-- Rastgele reset problemleri
-- Haberleşme hataları
-
-⚠️ Yaygın hata:
-- Deneme-yanılma ile çözmeye çalışmak
+### 10. Ürün Geliştirme Süreci
+- Prototipten üretime geçiş
+- Sertifikasyon süreçleri (CE, FCC, UL)
+- Üretim testi ve programlama jig'leri
+- Saha güncellemesi ve destek stratejisi
 
 ---
 
-## ⚙️ 6. Production & Manufacturing Awareness
+## Kaynaklar
 
-❗ Neden önemli:  
-Laboratuvar çalışan sistem, üretimde sorun çıkarabilir.
+### Kitaplar
+- **"Software Engineering for Embedded Systems"** — Robert Oshana *(endüstriyel perspektif)*
+- **"Embedded Software: The Works"** — Jack Ganssle *(ürün kalitesi yazılım)*
+- **"Safety-Critical Systems Handbook"** — David J. Smith *(fonksiyonel güvenlik)*
+- **"The Linux Programming Interface"** — Michael Kerrisk *(Linux embedded için)*
 
-📌 Öğrenmen gerekenler:
-- PCB design for manufacturing
-- EMI/EMC uyumluluğu
-- Test süreçleri
+### Bloglar ve Siteler
+- [Interrupt Blog — Memfault](https://interrupt.memfault.com) — üretim kalitesi embedded makaleler
+- [Embedded Artistry](https://embeddedartistry.com) — mimari ve kalite odaklı
+- [Jack Ganssle's The Embedded Muse](http://www.ganssle.com) — deneyimli bir mühendisten görüşler
 
-🧠 Gerçek kullanım:
-- Seri üretim
-- TÜBİTAK / endüstriyel projeler
-
-⚠️ Yaygın hata:
-- Sadece prototip odaklı düşünmek
-
----
-
-## 🔐 7. Secure Embedded Systems
-
-❗ Neden önemli:  
-Güvenlik artık opsiyon değil zorunluluk.
-
-📌 Öğrenmen gerekenler:
-- Secure boot
-- Firmware signing
-- Trust zone / secure element
-
-🧠 Gerçek kullanım:
-- IoT cihazlar
-- Endüstriyel sistemler
-
-⚠️ Yaygın hata:
-- Güvenliği son aşamada düşünmek
+### Konferanslar ve Topluluklar
+- Embedded World (Nürnberg) — dünyanın en büyük embedded fuarı
+- CppCon Embedded Track — C++ ile embedded
+- OSELAS, Yocto Project toplulukları
 
 ---
 
-## 🔄 8. OTA & Remote Device Management
+## Proje Ödevleri
 
-❗ Neden önemli:  
-Cihazlar sahada güncellenebilir olmalıdır.
-
-📌 Öğrenmen gerekenler:
-- OTA stratejileri
-- Fail-safe update
-- Version control
-
-🧠 Gerçek kullanım:
-- IoT platformları
-- Gateway sistemler
-
-⚠️ Yaygın hata:
-- Güncelleme sırasında cihazı brick etmek
+| # | Proje | Hedef |
+|---|---|---|
+| 1 | CAN tabanlı çoklu düğüm sistemi | Protokol, arbitration, hata yönetimi |
+| 2 | Özel bootloader + OTA + imza doğrulama | Güvenlik, kriptografi, flash yönetimi |
+| 3 | HIL test altyapısı | Kalite, CI/CD, otomatik test |
+| 4 | Yocto ile minimal Linux imajı | Linux embedded, device tree |
+| 5 | Fonksiyonel güvenlikli watchdog sistemi | ISO 26262, redundancy |
+| 6 | Enerji toplayan kablosuz sensör | Ultra low power, LoRaWAN |
 
 ---
 
-## 📊 9. System Optimization & Trade-offs
+## Seviye Kontrol Listesi
 
-❗ Neden önemli:  
-Her şey aynı anda optimize edilemez.
-
-📌 Öğrenmen gerekenler:
-- Power vs Performance
-- Cost vs Quality
-- Complexity vs Maintainability
-
-🧠 Gerçek kullanım:
-- Ürün tasarımı
-- Endüstriyel kararlar
-
-⚠️ Yaygın hata:
-- Her şeyi mükemmel yapmaya çalışmak
+- [ ] WCET analizinde hangi araçlar kullanılır?
+- [ ] MISRA-C kuralları neden ve hangi bağlamlarda zorunludur?
+- [ ] Secure boot zincirinde imza doğrulama nasıl çalışır?
+- [ ] Rate Monotonic Scheduling ile schedulability nasıl hesaplanır?
+- [ ] Device tree'de bir peripheral'ı nasıl tanımlarsın?
+- [ ] SIL 2 seviyesinde bir sistem için hangi test kanıtları gerekir?
 
 ---
 
-## 🧠 10. Engineering Mindset
+## Son Not
 
-❗ Neden önemli:  
-Teknik bilgi kadar düşünme biçimi de önemlidir.
+Bu seviyeye ulaşmak, öğrenmenin bittiği anlamına gelmez. Embedded mühendisliği sürekli gelişen bir alan. Bir konuyu derinlemesine öğrenmek, o konunun ne kadar geniş olduğunu anlamaktır.
 
-📌 Öğrenmen gerekenler:
-- Problem çözme yaklaşımı
-- Sistem düşüncesi
-- Dokümantasyon
-
-🧠 Gerçek kullanım:
-- Takım çalışması
-- Proje yönetimi
-
-⚠️ Yaygın hata:
-- Sadece kod yazmaya odaklanmak
-
----
-
-## 🎯 Bu seviyenin hedefi
-
-Bu seviyeyi bitiren biri:
-
-- Komple ürün tasarlayabilir  
-- Donanım + yazılım birlikte optimize edebilir  
-- Gerçek mühendislik problemlerini çözebilir  
-- Endüstriyel projelerde aktif rol alabilir  
-
----
-
-## 🚀 Son söz
-
-Bu noktaya geldiysen:
-
-👉 Artık öğrenen değil  
-👉 **üreten bir mühendissin**
+➡️ [embeddedTR Topluluğuna Katkıda Bulun](https://github.com/embeddedTR)
